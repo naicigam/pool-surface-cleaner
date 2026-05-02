@@ -2,7 +2,7 @@
 
 An open-source, DIY solar-powered floating pool surface cleaner. A simple device that floats on the pool, runs off a small solar panel and battery, and uses a single submersible pump to draw floating leaves and small debris into a removable mesh basket.
 
-Companion project to [pool-vacumm](https://github.com/naicigam/pool-vacumm) — same DIY-learning spirit (Fusion 360, 3D printing, electronics, soldering, embedded firmware), but a much simpler build: no drive motors, no tether, no navigation. It just drifts and skims.
+A hands-on learning project covering mechanical design (Fusion 360), 3D printing, electronics, soldering, and embedded firmware. No drive motors, no tether, no navigation — it just drifts and skims.
 
 ## Features
 
@@ -104,17 +104,6 @@ pio device monitor   # Serial monitor
 | Buoyancy | 3D-printed sealed pontoons + pool-noodle collar | Redundant flotation |
 
 See [BOM.md](BOM.md) for the full bill of materials with links and prices.
-
-## Compared to pool-vacumm
-
-| | Pool Vacuum (sister project) | Pool Surface Cleaner (this) |
-|---|---|---|
-| Where it works | Pool floor | Pool surface |
-| Drive | 2 wheel motors + IMU + bumpers | None — passive drift + pump thrust |
-| Pump | 1100 GPH | 350 GPH |
-| Power | Tethered 12 V 10 A | 10 W solar + on-board battery |
-| MCU | ESP32-WROOM-32 | ESP32-C3 (lower power) |
-| Complexity | High | Low — a great first build before the vacuum |
 
 ## License
 

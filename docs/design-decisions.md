@@ -2,13 +2,9 @@
 
 A running log of the choices behind this build, and what we explicitly rejected. Useful when you come back to the project six months later and wonder why something is the way it is.
 
-## Why a surface cleaner instead of a vacuum
-
-The pool-vacumm project is the headline build. The surface cleaner is the entry-point sibling: same toolchain (Fusion 360, PETG, ESP32, PlatformIO), one tenth the moving parts, half the BOM cost. It's a great first project before tackling the wheeled vacuum, and it solves a real problem — leaves on the surface during autumn — that the floor vacuum doesn't address.
-
 ## Why solar instead of tethered
 
-The vacuum is tethered for unlimited runtime and to keep the chassis small. The surface cleaner doesn't need unlimited runtime — clearing the surface is a "few hours per day" job, and a tether to a cleaner that drifts freely all over the surface would be an entanglement nightmare. Solar + battery is the right shape for this problem.
+A tether would solve power, but a cleaner that drifts freely all over the pool surface and a power cable in the water are an entanglement nightmare — for the cleaner, for swimmers, and for the pool's own skimmer/return plumbing. Surface cleaning is a "few hours per day" job, well within reach of a small solar panel + battery. Going off-grid lets the cleaner be a self-contained float you toss in and forget about.
 
 ## Why LiFePO4 instead of Li-ion 18650
 
@@ -22,21 +18,21 @@ The cost difference is small at this capacity (4 Ah).
 
 ## Why ESP32-C3 instead of ESP32-WROOM-32
 
-The vacuum uses the WROOM-32 because it has plenty of GPIO and processing power for IMU, motor PWM, web server, navigation. The surface cleaner needs almost none of that — it has 1 pump, 2 ADCs, 1 button. The C3:
+The cleaner's compute load is trivial — 1 pump output, 2 ADC inputs, 1 button, optional WiFi. The C3 wins on the only metric that matters here: power.
 
-- Pulls less idle current (~20 µA in deep sleep vs. ~10 mA — a 500× factor that matters when running on a 4 Ah battery)
+- Pulls far less idle current (~20 µA in deep sleep vs. ~10 mA on a stock WROOM-32 dev board — a 500× factor that matters on a 4 Ah battery)
 - Costs about half as much
-- Has a single core, which is fine for our load
+- A single RISC-V core is plenty for this workload
 
-If you want to reuse the same MCU as the vacuum project for parts-bin reasons, the WROOM-32 works — just tune `WIFI_DUTY_CYCLE_S` down to compensate for the higher idle draw.
+If you only have a WROOM-32 in the parts bin, it works — just tune `WIFI_DUTY_CYCLE_S` down to compensate for the higher idle draw.
 
 ## Why a passive-drift design instead of motors
 
-We considered adding the same wheel-motor-and-gearbox setup as the vacuum, just on the surface (paddlewheels). Rejected for three reasons:
+We considered adding paddlewheels to actively patrol the surface. Rejected for three reasons:
 
-1. **Power.** A pair of bilge-pump-motor-driven paddlewheels would consume far more than a single 350 GPH pump, blowing the solar budget.
-2. **Coverage.** Pool surface currents (from the pool's circulation pump) and the cleaner's own pump-thrust nozzle do most of the work for free. Empirically, the commercial Solar Breeze cleaner uses the same passive-drift principle.
-3. **Complexity.** Drive train + IMU + bumpers is the vacuum project. Doing it again here defeats the purpose of having a simpler entry-point sibling project.
+1. **Power.** A pair of motor-driven paddlewheels would consume far more than a single 350 GPH pump, blowing the solar budget.
+2. **Coverage.** Pool surface currents (from the pool's circulation pump) and the cleaner's own pump-thrust nozzle do most of the work for free. Empirically, commercial solar pool skimmers (Solar Breeze, Betta) use the same passive-drift principle.
+3. **Complexity.** A drive train, IMU, and bumpers would balloon the BOM and the firmware for marginal cleaning gains.
 
 ## Why a 200 µm filter mesh instead of finer
 

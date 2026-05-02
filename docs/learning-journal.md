@@ -4,7 +4,7 @@ A loose log of things learned, mistakes made, and rabbit holes worth (or not wor
 
 ## Entry 1 — Picking the pump (March 2026)
 
-First instinct was to reuse the vacuum's 1100 GPH pump. Bench-tested it floating in a 200 L drum with a 3D-printed weir lip — way too much suction, the cleaner dipped its weir under the surface and started swallowing whole leaves into the chamber faster than the basket could pass them. Backed off to a 350 GPH pump and the skim flow looks right: leaves drift over the lip without being yanked.
+Started by trying a 1100 GPH bilge pump from the parts bin. Bench-tested it floating in a 200 L drum with a 3D-printed weir lip — way too much suction, the cleaner dipped its weir under the surface and started swallowing whole leaves into the chamber faster than the basket could pass them. Backed off to a 350 GPH pump and the skim flow looks right: leaves drift over the lip without being yanked.
 
 Lesson: for a *skimmer*, you want flow rate, not lift. The 350 GPH pump barely lifts water, but it moves a lot of it horizontally, which is exactly what surface skimming needs.
 

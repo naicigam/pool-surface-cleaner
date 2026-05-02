@@ -2,7 +2,7 @@
 
 Estimated total: **~USD $130** / **~ARS $160.000** (at March 2026 rates)
 
-> This BOM is adapted for availability in **Argentina**, with MercadoLibre links and local alternatives. The surface cleaner is intentionally cheaper and simpler than the [pool-vacumm](https://github.com/naicigam/pool-vacumm) — no drive train, no tether, no IMU.
+> This BOM is adapted for availability in **Argentina**, with MercadoLibre links and local alternatives.
 
 ## Skimming & Pump
 
@@ -10,7 +10,7 @@ The pump sits inside the floating ring, submerged below the waterline. Surface w
 
 | Component | Qty | Est. Cost | Where to Buy | Notes |
 |-----------|-----|-----------|-------------|-------|
-| Bomba de achique 12V 350 GPH | 1 | ARS $25.000 | [MercadoLibre: Bomba achique 350 GPH](https://listado.mercadolibre.com.ar/bomba-de-achique-12-volts-350-gph) | Smaller than the vacuum's 1100 GPH — only needs to drive surface flow, not lift debris off the floor. |
+| Bomba de achique 12V 350 GPH | 1 | ARS $25.000 | [MercadoLibre: Bomba achique 350 GPH](https://listado.mercadolibre.com.ar/bomba-de-achique-12-volts-350-gph) | Submersible by design. Sized for surface flow, not for lifting debris off the floor. |
 | Bolsas filtro acuario (200 micron) | 5 | ARS $8.000 | MercadoLibre: "bolsa filtro acuario malla" | Removable debris basket, hand-washable. |
 | Manguera silicona 19mm (~30 cm) | 1 | ARS $3.000 | MercadoLibre: "manguera silicona 19mm" | Pump outlet to side nozzle. |
 | Abrazaderas inox (clamps) | 4 | ARS $2.000 | MercadoLibre: "abrazadera inox 16-25mm" | Hose clamps. |
@@ -27,7 +27,7 @@ The pump sits inside the floating ring, submerged below the waterline. Surface w
 
 ## Power (Solar + Battery)
 
-This is the big difference from the vacuum: **no tether**. A small solar panel keeps a LiFePO4 pack topped up; the firmware's deep-sleep cycle plus a low-voltage cutoff keeps the system within the energy budget.
+**No tether** — a small solar panel keeps a LiFePO4 pack topped up; the firmware's deep-sleep cycle plus a low-voltage cutoff keeps the system within the energy budget.
 
 | Component | Qty | Est. Cost | Where to Buy | Notes |
 |-----------|-----|-----------|-------------|-------|
@@ -45,7 +45,7 @@ This is the big difference from the vacuum: **no tether**. A small solar panel k
 |-----------|-----|-----------|-------------|-------|
 | ESP32-C3 SuperMini | 1 | ARS $7.000 | [MercadoLibre: ESP32-C3 SuperMini](https://listado.mercadolibre.com.ar/esp32-c3-supermini) | Lower power than the WROOM-32. ~20 µA in deep sleep. WiFi for the dashboard. |
 | Conversor DC-DC buck 12V→5V (MP1584 / LM2596) | 1 | ARS $3.000 | MercadoLibre: "buck mp1584" | Powers the ESP32-C3 from the 12 V bus. |
-| Módulo MOSFET IRF520 | 1 | ARS $3.000 | [MercadoLibre: IRF520](https://listado.mercadolibre.com.ar/modulo-mosfet-irf520) | Switches the bilge pump on/off. Same module as the vacuum project. |
+| Módulo MOSFET IRF520 | 1 | ARS $3.000 | [MercadoLibre: IRF520](https://listado.mercadolibre.com.ar/modulo-mosfet-irf520) | Switches the bilge pump on/off. Logic-level-friendly module — drives directly from the ESP32 GPIO. |
 | Resistencias 100kΩ + 22kΩ (divisor de tensión) | 4 | ARS $500 | Any electronics store | 2x dividers for battery + solar voltage sensing on ADC pins. |
 | Pulsador estanco IP67 (12mm) | 1 | ARS $4.000 | MercadoLibre: "pulsador estanco 12mm" | Waterproof start/stop / wake-from-sleep button. |
 | Microswitch palanca (opcional) | 1 | ARS $2.000 | MercadoLibre: "microswitch palanca" | Optional float switch for "basket full" detection. |
@@ -80,7 +80,7 @@ This is the big difference from the vacuum: **no tether**. A small solar panel k
 
 | Component | Qty | Est. Cost | Where to Buy | Notes |
 |-----------|-----|-----------|-------------|-------|
-| Filamento PETG (1 kg) | 1 | ARS $15.000 | [MercadoLibre: PETG filamento](https://listado.mercadolibre.com.ar/filamento-petg) | UV + chlorine resistant. One spool is enough — the cleaner has far less printed volume than the vacuum. |
+| Filamento PETG (1 kg) | 1 | ARS $15.000 | [MercadoLibre: PETG filamento](https://listado.mercadolibre.com.ar/filamento-petg) | UV + chlorine resistant. One spool covers the ring, dome, basket frame, and nozzle. |
 
 ---
 
