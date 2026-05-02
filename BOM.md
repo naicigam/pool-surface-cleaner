@@ -20,7 +20,7 @@ The pump sits inside the floating ring, submerged below the waterline. Surface w
 - 1x weir lip insert (sets the skimmer height ~5 mm below waterline)
 - 1x debris chamber bottom (pump mount, basket seat)
 - 1x mesh basket frame (snaps the filter bag in place)
-- 1x electronics dome (lid with O-ring groove + cable glands)
+- 1x **electronics dome + lid** — the rain-resistant enclosure for the battery, ESP32-C3, buck, MOSFET, BMS, etc. PETG at 100 % infill + 4 perimeters is essentially non-porous; sealing comes from the O-ring kit, PG7 glands, and marine epoxy listed under [Waterproofing & Hardware](#waterproofing--hardware) below. This is the project's IP-rated enclosure — there is no commercial box in the BOM by design.
 - 1x side outlet nozzle
 
 ---
