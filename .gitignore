@@ -1,0 +1,35 @@
+# PlatformIO
+firmware/.pio/
+firmware/.vscode/
+firmware/.pioenvs/
+firmware/.piolibdeps/
+firmware/.clang_complete
+firmware/.gcc-flags.json
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Fusion 360 backups
+cad/*.f3d.bak
+cad/AutoSave/
+
+# KiCad
+electronics/kicad/*-backups/
+electronics/kicad/*.bak
+electronics/kicad/*.lck
+electronics/kicad/fp-info-cache
+
+# Slicer output (keep STL/STEP, drop 3MF caches)
+cad/exports/*.gcode
+cad/exports/*.3mf
+
+# Local secrets (WiFi creds, etc.)
+firmware/include/secrets.h
