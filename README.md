@@ -59,6 +59,7 @@ pool-surface-cleaner/
 ├── CHECKLIST.md           # Build / test / pool-deployment checklist
 ├── docs/                  # Build documentation
 │   ├── build-guide.md     # Step-by-step assembly
+│   ├── cad-guide.md       # Step-by-step Fusion 360 modelling tutorial
 │   ├── wiring-diagram.md  # Electronics wiring
 │   ├── design-decisions.md
 │   └── learning-journal.md
@@ -85,7 +86,7 @@ pio device monitor   # Serial monitor
 
 ## Build Phases
 
-1. **CAD Design** — Model the floating ring, weir lip, debris chamber, basket holder, and electronics dome in Fusion 360
+1. **CAD Design** — Model the floating ring, weir lip, debris chamber, basket holder, and electronics dome in Fusion 360 (see [docs/cad-guide.md](docs/cad-guide.md) for a step-by-step tutorial)
 2. **Electronics Prototyping** — Breadboard ESP32-C3 + solar charger + MOSFET pump driver
 3. **Soldering** — Solder perfboard, build battery pack, waterproof every joint
 4. **3D Printing** — Print PETG parts at 100 % infill; add a foam pool-noodle ring for redundant buoyancy
